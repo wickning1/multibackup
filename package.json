@@ -1,0 +1,29 @@
+{
+  "name": "multibackup",
+  "version": "1.0.0",
+  "description": "Incremental rsync backup balanced among many different target volumes on many different servers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wickning1/multibackup.git"
+  },
+  "keywords": [
+    "rsync",
+    "backup",
+    "incremental",
+    "media",
+    "raid",
+    "volume",
+    "union",
+    "filesystem"
+  ],
+  "author": "Nickolaus Wing",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wickning1/multibackup/issues"
+  },
+  "homepage": "https://github.com/wickning1/multibackup#readme"
+}
