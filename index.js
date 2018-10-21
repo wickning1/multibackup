@@ -27,8 +27,10 @@ async function main() {
     await site.connect()
     await site.snapshot()
     await site.gather()
+/*
     await site.delete(source)
     await site.put(source)
+*/
   }))
   process.exit()
 }
