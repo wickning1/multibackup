@@ -4,7 +4,14 @@
   "description": "Incremental rsync backup balanced among many different target volumes on many different servers",
   "main": "index.js",
   "scripts": {
+    "backup": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ssh2-promise": ">=0.1.1",
+    "mz": ">=2.7.0",
+    "child-process-promise": ">=2.2.1",
+    "moment": ">=2.22.2"
   },
   "repository": {
     "type": "git",
