@@ -1,5 +1,5 @@
-const Site = require('lib/site.js')
-const Source = require('lib/source.js')
+const Site = require('./lib/site.js')
+const Source = require('./lib/source.js')
 
 const config = {
   sources: [
@@ -20,8 +20,9 @@ const config = {
 const source = new Source(config.sources)
 const sites = config.sites.map(siteconfig => new Site(siteconfig))
 
-(async function () {
+async function main() {
   await source.gather()
+  console.log(source.getAllFiles())
   await Promise.all(sites.map(async function (site) {
     await site.connect()
     await site.snapshot()
@@ -30,4 +31,8 @@ const sites = config.sites.map(siteconfig => new Site(siteconfig))
     await site.put(source)
   }))
   process.exit()
-})()
+}
+
+main().catch(function (e) {
+  console.log(e)
+})
