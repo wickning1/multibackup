@@ -1,11 +1,14 @@
-const Site = require('./lib/site.js')
-const MultiSource = require('./lib/multisource.js')
+const Site = require('./lib/site')
+const MultiSource = require('./lib/multisource')
 
 const config = {
   sources: [
     '/mnt/storage'
   ],
   sites: [{
+    includes: [
+      '/video/Anime Music Videos'
+    ],
     redundancy: 2,
     servers: [{
       user: 'ubuntumedia',
@@ -27,10 +30,8 @@ async function main() {
     await site.connect()
     await site.snapshot()
     await site.gather()
-/*
     await site.delete()
     await site.put()
-*/
   }))
   process.exit()
 }
