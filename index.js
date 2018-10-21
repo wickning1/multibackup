@@ -1,5 +1,5 @@
 const Site = require('./lib/site.js')
-const Source = require('./lib/source.js')
+const MultiSource = require('./lib/multisource.js')
 
 const config = {
   sources: [
@@ -17,19 +17,19 @@ const config = {
     }]
   }]
 }
-const source = new Source(config.sources)
-const sites = config.sites.map(siteconfig => new Site(siteconfig))
 
 async function main() {
+  const source = new MultiSource(config.sources)
   await source.gather()
-  console.log(source.getAllFiles())
+
+  const sites = config.sites.map(siteconfig => new Site(siteconfig, source))
   await Promise.all(sites.map(async function (site) {
     await site.connect()
     await site.snapshot()
     await site.gather()
 /*
-    await site.delete(source)
-    await site.put(source)
+    await site.delete()
+    await site.put()
 */
   }))
   process.exit()
