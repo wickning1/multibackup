@@ -7,7 +7,7 @@ async function main() {
   const source = new MultiSource(config.sources)
   await source.gather()
 
-  const timer = setInterval(Output.draw, 2000)
+  const timer = setInterval(Output.draw, 100)
   const sites = config.sites.map(siteconfig => new Site(siteconfig, source))
   await Promise.all(sites.map(async function (site) {
     await site.connect()
