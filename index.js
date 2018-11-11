@@ -1,9 +1,14 @@
 const Site = require('./lib/site')
 const MultiSource = require('./lib/multisource')
 const Output = require('./lib/output')
+const util = require('./lib/util')
 
 async function main() {
   const config = require('./config.js')
+  for (i = 0; i < 10; i++) {
+    console.log(i, util.bytesToHuman(i))
+  }
+  process.exit()
   const source = new MultiSource(config.sources)
   await source.gather()
 
