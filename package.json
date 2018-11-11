@@ -8,12 +8,12 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "ssh2-promise": ">=0.1.1",
-    "mz": ">=2.7.0",
     "child-process-promise": ">=2.2.1",
     "dayjs": "^1.7.7",
-    "terminal-kit": "^1.26.4",
-    "sprintf-js": "^1.1.1"
+    "mz": ">=2.7.0",
+    "sprintf-js": "^1.1.1",
+    "ssh2-promise": "^0.1.2",
+    "terminal-kit": "^1.26.4"
   },
   "repository": {
     "type": "git",
