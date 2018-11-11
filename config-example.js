@@ -4,7 +4,7 @@ module.exports = {
   ],
   sites: [{
     includes: [
-      '/video' /* /mnt/storage/video */
+      'video' /* /mnt/storage/video */
     ],
     redundancy: 2,
     servers: [{
