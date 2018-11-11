@@ -1,27 +1,8 @@
 const Site = require('./lib/site')
 const MultiSource = require('./lib/multisource')
 
-const config = {
-  sources: [
-    '/mnt/storage'
-  ],
-  sites: [{
-    includes: [
-      '/video/Anime Music Videos'
-    ],
-    redundancy: 2,
-    servers: [{
-      user: 'ubuntumedia',
-      host: '192.168.0.48',
-      keyfile: '~/.ssh/id_rsa',
-      disks: [{
-        path: '/media/storage/backups'
-      }]
-    }]
-  }]
-}
-
 async function main() {
+  const config = require('./config.js')
   const source = new MultiSource(config.sources)
   await source.gather()
 
