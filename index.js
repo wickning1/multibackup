@@ -19,4 +19,5 @@ async function main() {
 
 main().catch(function (e) {
   console.log(e)
+  process.exit()
 })
