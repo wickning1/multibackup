@@ -4,12 +4,13 @@ const Output = require('./lib/output')
 const util = require('./lib/util')
 
 async function main() {
+  Output.init()
+  const timer = setInterval(Output.draw, 150)
+
   const config = require('./config.js')
   const source = new MultiSource(config.sources)
   await source.gather()
 
-  Output.init()
-  const timer = setInterval(Output.draw, 150)
   const sites = config.sites.map(siteconfig => new Site(siteconfig, source))
   await Promise.all(sites.map(async function (site) {
     await site.connect()

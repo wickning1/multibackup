@@ -4,13 +4,12 @@
   "description": "Incremental rsync backup balanced among many different target volumes on many different servers",
   "main": "index.js",
   "scripts": {
-    "backup": "node index.js",
+    "backup": "node --no-warnings index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "child-process-promise": ">=2.2.1",
     "dayjs": "^1.7.7",
-    "mz": ">=2.7.0",
     "sprintf-js": "^1.1.1",
     "ssh2-promise": "^0.1.2",
     "terminal-kit": "^1.26.4"
