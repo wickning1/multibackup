@@ -23,8 +23,11 @@ async function main() {
     await site.delete()
     await site.put()
   }))
-
   clearInterval(timer)
+  Output.close()
+
+  console.log('Done!')
+
   process.exit()
 }
 
