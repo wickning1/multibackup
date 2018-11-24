@@ -1,9 +1,8 @@
 const Site = require('./lib/site')
 const MultiSource = require('./lib/multisource')
 const Output = require('./lib/output')
-const util = require('./lib/util')
 
-async function main() {
+async function main () {
   Output.init()
   const timer = setInterval(Output.draw, 150)
 
