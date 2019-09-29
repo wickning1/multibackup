@@ -1,4 +1,5 @@
 module.exports = {
+  email: 'youraddress@domain.com',
   sources: [
     '/mnt/storage'
   ],
@@ -15,5 +16,22 @@ module.exports = {
         path: '/mnt/backups'
       }]
     }]
-  }]
+  }],
+  nodemailer: {
+    transport: {
+      host: 'smtp.gmail.com',
+      port: 465,
+      secure: true,
+      auth: {
+        type: 'OAuth2',
+        user: 'user@gmail.com',
+        clientId: 'xxxxxxxxxxx',
+        clientSecret: 'xxxxxxxxxxx',
+        refreshToken: 'xxxxxxxxxxxxxxxxxxxx'
+      }
+    },
+    defaults: {
+      to: 'user@gmail.com'
+    }
+  }
 }

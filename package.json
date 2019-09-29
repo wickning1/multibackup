@@ -10,6 +10,7 @@
   "dependencies": {
     "child-process-promise": ">=2.2.1",
     "dayjs": "^1.8.11",
+    "nodemailer": "^6.3.0",
     "sprintf-js": "^1.1.2",
     "ssh2-promise": "github:wickning1/ssh2-promise",
     "terminal-kit": "^1.27.2"
