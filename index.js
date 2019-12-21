@@ -42,6 +42,6 @@ process.once('SIGINT', abort)
 process.once('SIGTERM', abort)
 main().catch(async function (e) {
   console.log(e)
-  await util.mail(config, 'Backup Error', e.message + '\n' + e.stack)
+  await util.mail(config, 'Backup Error', e.message + '\n' + (e.stack || (e + '\n' + new Error().stack)))
   abort()
 })
